@@ -1,4 +1,4 @@
-import { Field, InputType } from '@nestjs/graphql';
+import { Field, InputType, Int } from '@nestjs/graphql';
 
 @InputType()
 export class CreatePetInput {
@@ -7,4 +7,7 @@ export class CreatePetInput {
 
   @Field({ nullable: true })
   type?: string;
+
+  @Field(() => Int)
+  ownerId: number;
 }
